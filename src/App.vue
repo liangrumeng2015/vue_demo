@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <router-view/>
+    <keep-alive>
+      <router-view v-if='$route.meta.keepAlive' />
+    </keep-alive>
+    <router-view v-if='!$route.meta.keepAlive' />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App'
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  }
 </style>

@@ -1,14 +1,24 @@
 <template>
   <div id="home">
     首页
+    <img src="../../static/images/orderSeeProgress0.png">
+    <img src="/static/images/orderSeeProgress1.png">
+    <img :src="'../../static/images/orderSeeProgress'+index+'.png'">
+    <img  :src="orderPro1Img" />
+    <img  :src="orderPro2Img" />
   </div>
 </template>
 
 <script>
+  import orderPro1 from '@@/images/orderSeeProgress0.png'
+  import orderPro2 from '@@/images/orderSeeProgress1.png'
   export default {
     data() {
       return {
-        msg: ''
+        msg: '',
+        index:0,
+        orderPro1Img:orderPro1,
+        orderPro2Img:orderPro2
       }
     },
     methods: {
@@ -38,4 +48,7 @@
 </script>
 
 <style scoped="scoped">
+  img{
+    width: 100%;
+  }
 </style>
